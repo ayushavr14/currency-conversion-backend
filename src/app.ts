@@ -7,17 +7,14 @@ import { logger } from "./utils/logger";
 
 const app = express();
 
-// Connect to MongoDB
 mongoose
   .connect(process.env.MONGODB_URI!)
   .then(() => logger.info("Connected to MongoDB"))
   .catch((err) => logger.error("MongoDB connection error:", err));
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
 app.post("/api/convert", currencyController.convert);
 app.get("/api/currencies", currencyController.getCurrencies);
 app.get("/api/history", currencyController.getHistory);
