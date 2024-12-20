@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node public/app.js",
+    "start": "node src/build/app.js",
     "dev": "ts-node-dev src/app.ts",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [],
